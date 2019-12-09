@@ -25,12 +25,44 @@ if (passwordLength >= 8 && passwordLength <= 128) {
   alert("Thank you");
 }
 else {
-  alert("Tsk Tsk! Try again!")
+  alert("Tsk Tsk! Try again!");
 }
 console.log(passwordLength);
+
 // Create Prompt for user to choose if they would like special characters
-// Create Prompt for user to choose if they would like lowercase letters
-// Create Prompt for user to choose if they would like uppercase letters
+
+var userSpecialChar=confirm("Would you like special characters?");
+
+if (userSpecialChar === true) {
+  alert("Adding Special Characters to your password.");
+}
+else {
+  alert("No special characters will be added to your password");
+}
+console.log(userSpecialChar);
+
+// Create confirm for user to choose if they would like lowercase letters
+
+var userLowerCase=confirm("Would you like lowercase letters in your password?");
+
+if (userLowerCase === true) {
+  alert("Your password will have lowercase letters.");
+}
+else {
+  alert("Your password will have no lowercase letters.");
+}
+console.log(userLowerCase);
+// Create confirm for user to choose if they would like uppercase letters
+
+var userUpperCase=confirm("Would you like uppercase letters in your password?");
+
+if (userUpperCase === true) {
+  alert("Your password will have uppercase letters.");
+}
+else {
+  alert("Your password will have no uppercase letters.");
+}
+console.log(userUpperCase);
 // Validate at least one of prompts is true
 
 function copyToClipboard() {
