@@ -14,9 +14,14 @@ function writePassword() {
 }
 //Vars for characters used to make up generated password
 var numbers="0123456789";
+var numberArr=numbers.split("");
 var lowerCase="abcdefghijklmnopqrstuvwxyz";
+var lowerCaseArr=lowerCase.split("");
 var upperCase="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var upperCaseArr=upperCase.split("");
 var special="!@#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
+var specialArr=special.split("");
+
 var newPassword=[];
 
 // Create Prompt for user to choose 8-128 characters for their password
