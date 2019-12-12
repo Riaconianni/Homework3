@@ -25,6 +25,7 @@ var specialArr=special.split("");
 var newPassword=[];
 
 // Create Prompt for user to choose 8-128 characters for their password
+function generatePassword() {
 var passwordLength=prompt("How many characters would you like in your password? Please choose a number from 8-128");
 
 if (passwordLength >= 8 && passwordLength <= 128) {
@@ -81,9 +82,17 @@ else {
 };
 console.log(userUpperCase);
 
+newPassword.push(numberArr, lowerCaseArr, upperCaseArr, specialArr);
+
+return newPassword.join('');
+};
+
 // Validate at least one of prompts is true
+
 //Create while loop that adds each true variable to the empty array called newPassword
+
 //Use the newPassword array to generate the password
+
 function copyToClipboard() {
   // BONUS 
 }
