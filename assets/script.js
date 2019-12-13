@@ -22,18 +22,17 @@ var upperCaseArr=upperCase.split("");
 var special="!@#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
 var specialArr=special.split("");
 
-var newPassword=[];
+var newPassword = [];
+var characterBankArr = [];
 
 // Create Prompt for user to choose 8-128 characters for their password
 function generatePassword() {
 var passwordLength=prompt("How many characters would you like in your password? Please choose a number from 8-128");
 
+passWordLength = parseInt(passwordLength);
 if (passwordLength >= 8 && passwordLength <= 128) {
   alert("Thank you");
 }
-else {
-  alert("Tsk Tsk! Try again!");
-} //need to make loop so person has to type correct amount
 console.log(passwordLength);
 
 //Create confirm for user to choose if they would like numbers
@@ -41,6 +40,7 @@ var userNum=confirm("Would you like numbers in your password?");
 
 if (userNum === true) {
   alert("Your password will contain numbers.");
+  characterBankArr.push(numberArr);
 }
 else {
   alert("Your password will not contain numbers.");
@@ -52,6 +52,7 @@ var userSpecialChar=confirm("Would you like special characters?");
 
 if (userSpecialChar === true) {
   alert("Your password will contain special characters.");
+  characterBankArr.push(specialArr);
 }
 else {
   alert("Your password will not contain special characters.");
@@ -64,6 +65,7 @@ var userLowerCase=confirm("Would you like lowercase letters in your password?");
 
 if (userLowerCase === true) {
   alert("Your password will contain lowercase letters.");
+  characterBankArr.push(lowerCaseArr);
 }
 else {
   alert("Your password will not contain lowercase letters.");
@@ -76,25 +78,27 @@ var userUpperCase=confirm("Would you like uppercase letters in your password?");
 
 if (userUpperCase === true) {
   alert("Your password will contain uppercase letters.");
+  characterBankArr.push(upperCaseArr);
 }
 else {
   alert("Your password will not contain uppercase letters.");
 };
 console.log(userUpperCase);
 
-newPassword.push(numberArr, lowerCaseArr, upperCaseArr, specialArr);
+// use a loop to iterate the amount of times for the character length
+for (var i = 0; i < passwordLength; i++) {
+  // pick what type of character at random
+  var characterTypeArr = characterBankArr[Math.floor(Math.random() * characterBankArr.length)];
+  // pick character from characterTypeArr
+  var charPicked = characterTypeArr[Math.floor(Math.random() * characterTypeArr.length)];
+  newPassword.push(charPicked);
+}
 
 return newPassword.join('');
 };
 
-// Validate at least one of prompts is true
-
-//Create while loop that adds each true variable to the empty array called newPassword
-
-//Use the newPassword array to generate the password
-
 function copyToClipboard() {
-  // BONUS 
+
 }
 
 // Add event listener to generate button
