@@ -13,3 +13,5 @@ In all of the if statements containing true statements, a variable called charac
 A loop was created to iterate the amount of times for the character length
 
 At the end of the function, I returned the newPassword with .join(''); to create the actual password.
+
+Added copy to the clipboard button and function

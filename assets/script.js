@@ -1,5 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+var copyBtn = document.querySelector("#copy");
 
 
 // Write password to the #password input
@@ -98,10 +99,15 @@ return newPassword.join('');
 };
 
 function copyToClipboard() {
-
-}
+  var copyText = document.querySelector("#password");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  alert("Copied the text: " + copyText.value);
+};
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
 // BONUS EVENT LISTENER
+copyBtn.addEventListener("click", copyToClipboard);
